@@ -1,0 +1,10 @@
+baseURL = 'https://ddr2000.github.io/Website/'
+languageCode = 'en-us'
+title = 'Dilir Diyan Rafid'
+theme = 'paper'
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xhtml = false
