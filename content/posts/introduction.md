@@ -1,6 +1,6 @@
 +++
 title = 'An introduction in the context of an early project'
-date = 2024-01-14T07:07:07+01:00
+date = 2024-06-11T07:07:07+01:00
 draft = false
 +++
 
