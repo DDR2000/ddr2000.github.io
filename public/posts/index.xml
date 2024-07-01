@@ -2,26 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on </title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://ddr2000.github.io/posts/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo -- 0.126.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jul 2024 07:07:07 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jul 2024 09:12:30 -0400</lastBuildDate>
+    <atom:link href="https://ddr2000.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sketch1 Post</title>
+      <link>https://ddr2000.github.io/posts/sketch1-post/</link>
+      <pubDate>Mon, 01 Jul 2024 09:12:30 -0400</pubDate>
+      <guid>https://ddr2000.github.io/posts/sketch1-post/</guid>
+      <description>To absolutely no one&amp;rsquo;s surprise I didn&amp;rsquo;t actually go through with updating this page regularly. The good news is I&amp;rsquo;ve been keeping busy with projects.
+One of those projects is what I&amp;rsquo;m very creatively calling SketchTo3D. The idea is fairly simple, but we&amp;rsquo;ll talk about the main motivation behind this project in a bit. Let&amp;rsquo;s first look at an example input.
+The goal is to turn drawings like this one into a 3D mesh, while somehow retaining depth information.</description>
+    </item>
     <item>
       <title>SketchTo3D Project: Part 1</title>
-      <link>http://localhost:1313/posts/sketch1/</link>
+      <link>https://ddr2000.github.io/posts/sketch1/</link>
       <pubDate>Mon, 01 Jul 2024 07:07:07 +0100</pubDate>
-      <guid>http://localhost:1313/posts/sketch1/</guid>
+      <guid>https://ddr2000.github.io/posts/sketch1/</guid>
       <description>To absolutely no one&amp;rsquo;s surprise I didn&amp;rsquo;t actually go through with updating this page regularly. The good news is I&amp;rsquo;ve been keeping busy with projects.
 One of those projects is what I&amp;rsquo;m very creatively calling SketchTo3D. The idea is fairly simple, but we&amp;rsquo;ll talk about the main motivation behind this project in a bit. Let&amp;rsquo;s first look at an example input.
 The goal is to turn drawings like this one into a 3D mesh, while somehow retaining depth information.</description>
     </item>
     <item>
       <title>An introduction in the context of an early project</title>
-      <link>http://localhost:1313/posts/introduction/</link>
+      <link>https://ddr2000.github.io/posts/introduction/</link>
       <pubDate>Tue, 11 Jun 2024 07:07:07 +0100</pubDate>
-      <guid>http://localhost:1313/posts/introduction/</guid>
+      <guid>https://ddr2000.github.io/posts/introduction/</guid>
       <description>&lt;p&gt;With the prospect of slowly populating this website with my past and ongoing projects, I figured I&amp;rsquo;d do a sort of introduction post while I take you through one of my earlier projects, Etel. The idea came to me when I first stumbled upon GPGPU programming during my freshman year, don&amp;rsquo;t ask how that happened before I even touched a Graphics API. I was particularly proud of this idea because I came up with it myself, regardless of whether it already existed somewhere out there.&lt;/p&gt;
 &lt;p&gt;The project in question is a random terrain generator. In hindsight, there was nothing so &amp;ldquo;terrain&amp;rdquo; about it. The idea was to start with a 2D array representing the top view of a patch of terrain. In the beginning all elements are assigned the same value, which represents the height at that point on the x-z plain. A mask array of the same dimensions is then subdivided into a 2x2 grid of cells, where each cell is assigned a new height value in a specified range. Each cell of the mask overlaps a quadrant of the original grid and the new values of the mask are applied to coinciding points from the original grid:&lt;/p&gt;
 &lt;figure class=&#34;align-center &#34;&gt;

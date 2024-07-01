@@ -5,13 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>SketchTo3D Project: Part 1 | </title>
+<title>Sketch1 Post | </title>
 <meta name="keywords" content="">
 <meta name="description" content="To absolutely no one&rsquo;s surprise I didn&rsquo;t actually go through with updating this page regularly. The good news is I&rsquo;ve been keeping busy with projects.
 One of those projects is what I&rsquo;m very creatively calling SketchTo3D. The idea is fairly simple, but we&rsquo;ll talk about the main motivation behind this project in a bit. Let&rsquo;s first look at an example input.
 The goal is to turn drawings like this one into a 3D mesh, while somehow retaining depth information.">
 <meta name="author" content="">
-<link rel="canonical" href="https://ddr2000.github.io/posts/sketch1/">
+<link rel="canonical" href="https://ddr2000.github.io/posts/sketch1-post/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.4599eadb9eb2ad3d0a8d6827b41a8fda8f2f4af226b63466c09c5fddbc8706b7.css" integrity="sha256-RZnq256yrT0KjWgntBqP2o8vSvImtjRmwJxf3byHBrc=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://ddr2000.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://ddr2000.github.io/favicon-16x16.png">
@@ -20,7 +20,7 @@ The goal is to turn drawings like this one into a 3D mesh, while somehow retaini
 <link rel="mask-icon" href="https://ddr2000.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://ddr2000.github.io/posts/sketch1/">
+<link rel="alternate" hreflang="en" href="https://ddr2000.github.io/posts/sketch1-post/">
 <noscript>
     <style>
         #theme-toggle,
@@ -60,17 +60,17 @@ The goal is to turn drawings like this one into a 3D mesh, while somehow retaini
 </noscript>
   
 
-<meta property="og:title" content="SketchTo3D Project: Part 1" />
+<meta property="og:title" content="Sketch1 Post" />
 <meta property="og:description" content="To absolutely no one&rsquo;s surprise I didn&rsquo;t actually go through with updating this page regularly. The good news is I&rsquo;ve been keeping busy with projects.
 One of those projects is what I&rsquo;m very creatively calling SketchTo3D. The idea is fairly simple, but we&rsquo;ll talk about the main motivation behind this project in a bit. Let&rsquo;s first look at an example input.
 The goal is to turn drawings like this one into a 3D mesh, while somehow retaining depth information." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ddr2000.github.io/posts/sketch1/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-07-01T07:07:07+01:00" />
-<meta property="article:modified_time" content="2024-07-01T07:07:07+01:00" />
+<meta property="og:url" content="https://ddr2000.github.io/posts/sketch1-post/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-07-01T09:12:30-04:00" />
+<meta property="article:modified_time" content="2024-07-01T09:12:30-04:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="SketchTo3D Project: Part 1"/>
+<meta name="twitter:title" content="Sketch1 Post"/>
 <meta name="twitter:description" content="To absolutely no one&rsquo;s surprise I didn&rsquo;t actually go through with updating this page regularly. The good news is I&rsquo;ve been keeping busy with projects.
 One of those projects is what I&rsquo;m very creatively calling SketchTo3D. The idea is fairly simple, but we&rsquo;ll talk about the main motivation behind this project in a bit. Let&rsquo;s first look at an example input.
 The goal is to turn drawings like this one into a 3D mesh, while somehow retaining depth information."/>
@@ -90,8 +90,8 @@ The goal is to turn drawings like this one into a 3D mesh, while somehow retaini
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "SketchTo3D Project: Part 1",
-      "item": "https://ddr2000.github.io/posts/sketch1/"
+      "name": "Sketch1 Post",
+      "item": "https://ddr2000.github.io/posts/sketch1-post/"
     }
   ]
 }
@@ -100,20 +100,20 @@ The goal is to turn drawings like this one into a 3D mesh, while somehow retaini
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "SketchTo3D Project: Part 1",
-  "name": "SketchTo3D Project: Part 1",
+  "headline": "Sketch1 Post",
+  "name": "Sketch1 Post",
   "description": "To absolutely no one\u0026rsquo;s surprise I didn\u0026rsquo;t actually go through with updating this page regularly. The good news is I\u0026rsquo;ve been keeping busy with projects.\nOne of those projects is what I\u0026rsquo;m very creatively calling SketchTo3D. The idea is fairly simple, but we\u0026rsquo;ll talk about the main motivation behind this project in a bit. Let\u0026rsquo;s first look at an example input.\nThe goal is to turn drawings like this one into a 3D mesh, while somehow retaining depth information.",
   "keywords": [
     
   ],
-  "articleBody": "To absolutely no one’s surprise I didn’t actually go through with updating this page regularly. The good news is I’ve been keeping busy with projects.\nOne of those projects is what I’m very creatively calling SketchTo3D. The idea is fairly simple, but we’ll talk about the main motivation behind this project in a bit. Let’s first look at an example input.\nThe goal is to turn drawings like this one into a 3D mesh, while somehow retaining depth information. It may or may not be apparent that the intention with this drawing was to have the bigger square be closer than the smaller square in the back. The algorithm needs to somehow read this intention and also derive the depth in model space.\nThe first step seems simple, we need edge information and/or corner information. However, edge detecting the raw source gives us some chaotic results.\nOpenCV provides a nifty corner detection utility with goodFeaturesToTrack() but it’s going to return every intersection with the rough lines. There are several ways to clean up the edges but none of the ones I thought of initially were good solutions. Simple discarding the shorter lines over some region between corner candidates, generalizing by gradient, could work but might fall apart over other samples. The work around then has to somehow convert human sketches to lines with less character.\nBy using thicker lines, the problem is reframed from detecting and discarding noise to simply thinning one thick line for every edge. I think a package of OpenCV also includes a thinning utility but the theory for Zhang-Suen thinning seems simple enough so lets implement it.\ndef conditionA(img, y, x):\rx0, y0, x1, y1 = x-1, y-1, x+1, y+1\r#[p2,p3,p4,p5,p6,p7,p8,p9]\rneighbours=[img[y0,x],img[y0,x1],img[y,x1],img[y1,x1],img[y1,x],img[y1,x0],img[y,x0],img[y0,x0]]\rtransitions=0\rfor i in range(1, len(neighbours)):\rtransitions += (neighbours[i]\u003eneighbours[i-1])*(neighbours[i]-neighbours[i-1])\rtransitions += (neighbours[0]\u003eneighbours[-1])*(neighbours[0]-neighbours[-1])\rreturn transitions\rdef conditionB(img, y, x):\rx0, y0, x1, y1 = x-1, y-1, x+1, y+1\rreturn img[y0,x] + img[y0,x1] + img[y,x1] + img[y1,x1] + img[y1,x] + img[y1,x0] + img[y,x0] + img[y0,x0]\rdef thinning(img, rMin, rMax):\rimg = np.where(img\u003e127, 0, 1)\rwhile(True):\rnote1=[]\rfor i in range(rMin[0],rMax[0]-1):\rfor j in range(rMin[1], rMax[1]-1):\rA = conditionA(img, j, i)\rB = conditionB(img, j, i)\rc = img[j,i] and (B \u003e= 2) and (B \u003c= 6) and (A == 1) and ((img[j-1, i]==0) or (img[j, i+1]==0) or (img[j+1, i]==0)) and ((img[j, i+1]==0) or (img[j+1, i]==0) or (img[j, i-1])==0)\rif c:\rnote1.append([j,i])\rfor p in note1:\rimg[p[0],p[1]]=0\rnote2 = []\rfor i in range(rMin[0],rMax[0]-1):\rfor j in range(rMin[1], rMax[1]-1):\rA = conditionA(img, j, i)\rB = conditionB(img, j, i)\rc = img[j,i] and (B \u003e= 2) and (B \u003c= 6) and (A == 1) and ((img[j-1, i]==0) or (img[j, i+1]==0) or (img[j, i-1]==0)) and ((img[j-1, i]==0) or (img[j+1, i]==0) or (img[j, i-1])==0)\rif c:\rnote2.append([j,i])\rfor p in note2:\rimg[p[0],p[1]]=0\rif(len(note1)==0 or len(note2)==0):\rbreak\rwhite = (0,0,0)\rblack = (255,255,255)\rres = np.zeros((img.shape[0], img.shape[1], 3), dtype=np.uint8)\r# Map binary values to the respective colors\rres[img == 0] = white\rres[img == 1] = black\rimg = cv2.cvtColor(res, cv2.COLOR_RGB2GRAY)\rreturn img Binarizing the image before passing it onto thinning produces a much cleaner image. Here are the detected points superimposed on the thinned image.\nSo now let’s actually address the main motivation I talked about earlier. In a previous research project, I looked at the viability of using AI images to compose 3D scenes, sort of bypassing the immense compute required to train a model to generate believable 3D scenes directly. One of the pain points of that project was mapping believable depths to each object. A depth mask from some existing model does provide relative depth but how about in this case? This project isolates that problem more so I can think about how best to derive model space depth.\nWith corner information, I’m only generating a flat shape. If samples are made to always be in perspective, a reliable method of deriving depth can be defining vanishing points, and in turn the x-y plane. A z-vector for candidate lines then becomes a simple affair.\nThanks for reading thus far, I’ll update this series with another post after I test some more ideas.\n",
+  "articleBody": "To absolutely no one’s surprise I didn’t actually go through with updating this page regularly. The good news is I’ve been keeping busy with projects.\nOne of those projects is what I’m very creatively calling SketchTo3D. The idea is fairly simple, but we’ll talk about the main motivation behind this project in a bit. Let’s first look at an example input.\nThe goal is to turn drawings like this one into a 3D mesh, while somehow retaining depth information. It may or may not be apparent that the intention with this drawing was to have the bigger square be closer than the smaller square in the back. The algorithm needs to somehow read this intention and also derive the depth in model space.\nThe first step seems simple, we need edge information and/or corner information. However, edge detecting the raw source gives us some chaotic results.\nOpenCV provides a nifty corner detection utility with goodFeaturesToTrack() but it’s going to return every intersection with the rough lines. There are several ways to clean up the edges but none of the ones I thought of initially were good solutions. Simple discarding the shorter lines over some region between corner candidates, generalizing by gradient, could work but might fall apart over other samples. The work around then has to somehow convert human sketches to lines with less character.\nBy using thicker lines, the problem is reframed from detecting and discarding noise to simply thinning one thick line for every edge. I think a package of OpenCV also includes a thinning utility but the theory for Zhang-Suen thinning seems simple enough so lets implement it.\ndef conditionA(img, y, x): x0, y0, x1, y1 = x-1, y-1, x+1, y+1 #[p2,p3,p4,p5,p6,p7,p8,p9] neighbours=[img[y0,x],img[y0,x1],img[y,x1],img[y1,x1],img[y1,x],img[y1,x0],img[y,x0],img[y0,x0]] transitions=0 for i in range(1, len(neighbours)): transitions += (neighbours[i]\u003eneighbours[i-1])*(neighbours[i]-neighbours[i-1]) transitions += (neighbours[0]\u003eneighbours[-1])*(neighbours[0]-neighbours[-1]) return transitions def conditionB(img, y, x): x0, y0, x1, y1 = x-1, y-1, x+1, y+1 return img[y0,x] + img[y0,x1] + img[y,x1] + img[y1,x1] + img[y1,x] + img[y1,x0] + img[y,x0] + img[y0,x0] def thinning(img, rMin, rMax): img = np.where(img\u003e127, 0, 1) while(True): note1=[] for i in range(rMin[0],rMax[0]-1): for j in range(rMin[1], rMax[1]-1): A = conditionA(img, j, i) B = conditionB(img, j, i) c = img[j,i] and (B \u003e= 2) and (B \u003c= 6) and (A == 1) and ((img[j-1, i]==0) or (img[j, i+1]==0) or (img[j+1, i]==0)) and ((img[j, i+1]==0) or (img[j+1, i]==0) or (img[j, i-1])==0) if c: note1.append([j,i]) for p in note1: img[p[0],p[1]]=0 note2 = [] for i in range(rMin[0],rMax[0]-1): for j in range(rMin[1], rMax[1]-1): A = conditionA(img, j, i) B = conditionB(img, j, i) c = img[j,i] and (B \u003e= 2) and (B \u003c= 6) and (A == 1) and ((img[j-1, i]==0) or (img[j, i+1]==0) or (img[j, i-1]==0)) and ((img[j-1, i]==0) or (img[j+1, i]==0) or (img[j, i-1])==0) if c: note2.append([j,i]) for p in note2: img[p[0],p[1]]=0 if(len(note1)==0 or len(note2)==0): break white = (0,0,0) black = (255,255,255) res = np.zeros((img.shape[0], img.shape[1], 3), dtype=np.uint8) # Map binary values to the respective colors res[img == 0] = white res[img == 1] = black img = cv2.cvtColor(res, cv2.COLOR_RGB2GRAY) return img Binarizing the image before passing it onto thinning produces a much cleaner image. Here are the detected points superimposed on the thinned image.\nSo now let’s actually address the main motivation I talked about earlier. In a previous research project, I looked at the viability of using AI images to compose 3D scenes, sort of bypassing the immense compute required to train a model to generate believable 3D scenes directly. One of the pain points of that project was mapping believable depths to each object. A depth mask from some existing model does provide relative depth but how about in this case? This project isolates that problem more so I can think about how best to derive model space depth.\nWith corner information, I’m only generating a flat shape. If samples are made to always be in perspective, a reliable method of deriving depth can be defining vanishing points, and in turn the x-y plane. A z-vector for candidate lines then becomes a simple affair.\nThanks for reading thus far, I’ll update this series with another post after I test some more ideas.\n",
   "wordCount" : "686",
   "inLanguage": "en",
-  "datePublished": "2024-07-01T07:07:07+01:00",
-  "dateModified": "2024-07-01T07:07:07+01:00",
+  "datePublished": "2024-07-01T09:12:30-04:00",
+  "dateModified": "2024-07-01T09:12:30-04:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ddr2000.github.io/posts/sketch1/"
+    "@id": "https://ddr2000.github.io/posts/sketch1-post/"
   },
   "publisher": {
     "@type": "Organization",
@@ -175,9 +175,9 @@ The goal is to turn drawings like this one into a 3D mesh, while somehow retaini
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      SketchTo3D Project: Part 1
+      Sketch1 Post
     </h1>
-    <div class="post-meta"><span title='2024-07-01 07:07:07 +0100 +0100'>July 1, 2024</span>
+    <div class="post-meta"><span title='2024-07-01 09:12:30 -0400 EDT'>July 1, 2024</span>
 
 </div>
   </header> 
