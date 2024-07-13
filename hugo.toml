@@ -14,10 +14,10 @@ enabled = true
   [[params.profileMode.buttons]]
   name = "Posts"
   url = "/posts"
-  
+
   [[params.profileMode.buttons]]
   name = "LinkedIn"
-  url = "<https://www.linkedin.com/in/dilir-diyan-09977716b/>"
+  url = 'https://www.linkedin.com/in/dilir-diyan-09977716b/'
 
 [markup]
   [markup.goldmark]
